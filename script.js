@@ -36,7 +36,7 @@ document.getElementById("start").onclick = function () {
     }
     count++;
   }
-  if (oneFun["set-task"] != "" && oneFun["set-task"].length > 5) {
+  if (oneFun["set-task"] != "" && oneFun["set-task"].length >= 3) {
     document.querySelector(".display-task").innerHTML = `${oneFun["set-task"]}`;
   }
   element1.style.visibility = "hidden";
