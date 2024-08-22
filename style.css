@@ -206,7 +206,6 @@ body {
     flex-wrap: wrap;
     width: 240px;
     height: inherit;
-    
   }
   .suggestiion .sug-box {
     font-size: 14px;
@@ -215,6 +214,10 @@ body {
     place-content: center;
     text-align: center;
     margin-bottom: 15px;
+  }
+  .display-time .message {
+    font-size: 24px;
+    font-weight: 300;
   }
 }
 

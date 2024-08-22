@@ -46,9 +46,9 @@ document.getElementById("start").onclick = function () {
   const timeInterval = setInterval(() => updateTime(totalSeconds), 1000);
 
   function updateTime() {
-    const days = Math.floor(totalSeconds / (60 * 60 * 24));
-    const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
-    const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+    const days = Math.floor(totalSeconds / (86400));
+    const hours = Math.floor((totalSeconds % (86400)) / (3600));
+    const minutes = Math.floor((totalSeconds % (3600)) / 60);
     const seconds = totalSeconds % 60;
     countElement.innerHTML = `${days}:${hours}:${minutes}:${seconds}`;
 
