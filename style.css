@@ -138,6 +138,7 @@ body {
 }
 
 .display-countdown {
+  font-family: monospace;
   margin: 20px 0;
   font-size: 50px;
   display: flex;

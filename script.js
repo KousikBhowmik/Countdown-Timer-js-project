@@ -46,17 +46,17 @@ document.getElementById("start").onclick = function () {
   const timeInterval = setInterval(() => updateTime(totalSeconds), 1000);
 
   function updateTime() {
-    const days = Math.floor(totalSeconds / (86400));
-    const hours = Math.floor((totalSeconds % (86400)) / (3600));
-    const minutes = Math.floor((totalSeconds % (3600)) / 60);
-    const seconds = totalSeconds % 60;
+    const days = Math.floor(totalSeconds / (86400)).toString().padStart(2,0);
+    const hours = Math.floor((totalSeconds % (86400)) / (3600)).toString().padStart(2,0);
+    const minutes = Math.floor((totalSeconds % (3600)) / 60).toString().padStart(2,0);
+    const seconds = (totalSeconds % 60).toString().padStart(2, 0);
     countElement.innerHTML = `${days}:${hours}:${minutes}:${seconds}`;
 
     totalSeconds -= 1;
     if (totalSeconds < 0) {
       clearInterval(timeInterval);
       element5.style.visibility = "visible";
-      countElement.innerHTML = `0:0:0:0`;
+      countElement.innerHTML = `00:00:00:00`;
       function endFun() {
         element1.style.visibility = "visible";
         element2.style.visibility = "visible";
