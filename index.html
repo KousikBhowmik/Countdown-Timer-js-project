@@ -4,100 +4,76 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Countdown Timer</title>
-    <link rel="shortcut icon" href="./imgs/clock.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./imgs/clock.png" type="image/x-icon" />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1 id="main-title">Countdown Timer</h1>
+    <div class="title">
+      <h1 class="main-title">Countdown Timer</h1>
+      <span class="sub-title">by Lazzy Clock</span>
+    </div>
 
-    <form action="#" class="set-time">
-      <div class="set-time-title">
-        <input id="set-task" type="text" placeholder="Task Title (optional)" />
-      </div>
-
-      <div class="set-time-box">
-        <input id="set-day" type="number" min="0" max="365" placeholder="Day" />
-        <input
-          id="set-hours"
-          type="number"
-          min="0"
-          max="24"
-          placeholder="Hours"
-        />
-        <input id="set-min" type="number" min="0" max="60" placeholder="Min" />
-        <input id="set-sec" type="number" min="0" max="60" placeholder="Sec" />
+    <form action="#" class="input-form">
+      <input
+        type="text"
+        class="input-title"
+        placeholder="Enter Title Name (Optional)"
+      />
+      <div class="input-all">
+        <input type="number" class="input-day" placeholder="Day" />
+        <input type="number" class="input-hour" placeholder="Hour" />
+        <input type="number" class="input-min" placeholder="Min" />
+        <input type="number" class="input-sec" placeholder="Sec" />
       </div>
       <div class="btns">
-        <button id="start">Submit</button>
-        <button type="reset">Reset</button>
+        <button class="btn reset" type="reset">Reset</button>
+        <button class="btn submit">Submit</button>
       </div>
     </form>
 
-    <h1 id="quick">Quick Suggestions</h1>
+    <audio id="myAudio" src="./imgs/mixkit-classic-alarm-995.wav" loop></audio>
+
     <div class="suggestiion">
-      <div class="sug-box">
-        <div class="task-title">Brush Teeth</div>
-        <div class="task-time">
-          <span class="take-hour">00</span>: <span class="take-min">03</span>:
-          <span class="take-sec">00</span>
-        </div>
+      <div class="task-box" id="task-1">
+        <p class="task-title">Brush Teeth</p>
+        <p class="task-time">03</p>
       </div>
-      <div class="sug-box">
-        <div class="task-title">Egg Boil</div>
-        <div class="task-time">
-          <span class="take-hour">00</span>: <span class="take-min">12</span>:
-          <span class="take-sec">00</span>
-        </div>
+      <div class="task-box" id="task-2">
+        <p class="task-title">Egg Boil</p>
+        <p class="task-time">10</p>
       </div>
-      <div class="sug-box">
-        <div class="task-title">Mask</div>
-        <div class="task-time">
-          <span class="take-hour">00</span>: <span class="take-min">15</span>:
-          <span class="take-sec">00</span>
-        </div>
+      <div class="task-box" id="task-3">
+        <p class="task-title">Noodle</p>
+        <p class="task-time">10</p>
       </div>
-      <div class="sug-box">
-        <div class="task-title">Noodle</div>
-        <div class="task-time">
-          <span class="take-hour">00</span>: <span class="take-min">10</span>:
-          <span class="take-sec">00</span>
-        </div>
+      <div class="task-box" id="task-4">
+        <p class="task-title">Face Mask</p>
+        <p class="task-time">15</p>
       </div>
-      <div class="sug-box">
-        <div class="task-title">Task 5</div>
-        <div class="task-time">
-          <span class="take-hour">00</span>: <span class="take-min">22</span>:
-          <span class="take-sec">00</span>
-        </div>
+      <div class="task-box" id="task-5">
+        <p class="task-title">Task 5</p>
+        <p class="task-time">20</p>
       </div>
-      <div class="sug-box">
-        <div class="task-title">Task 6</div>
-        <div class="task-time">
-          <span class="take-hour">00</span>: <span class="take-min">24</span>:
-          <span class="take-sec">00</span>
-        </div>
+      <div class="task-box" id="task-6">
+        <p class="task-title">Task 6</p>
+        <p class="task-time">25</p>
       </div>
-      <div class="sug-box">
-        <div class="task-title">Task 7</div>
-        <div class="task-time">
-          <span class="take-hour">00</span>: <span class="take-min">26</span>:
-          <span class="take-sec">00</span>
-        </div>
+      <div class="task-box" id="task-7">
+        <p class="task-title">Task 7</p>
+        <p class="task-time">05</p>
       </div>
-      <div class="sug-box">
-        <div class="task-title">Task 8</div>
-        <div class="task-time">
-          <span class="take-hour">00</span>: <span class="take-min">30</span>:
-          <span class="take-sec">00</span>
-        </div>
+      <div class="task-box" id="task-8">
+        <p class="task-title">Task 8</p>
+        <p class="task-time">30</p>
       </div>
     </div>
 
-    <div class="display-time">
-      <h2 class="display-task">Countdown</h2>
-      <h1 class="display-countdown">00:00:00:00</h1>
-      <h2 class="message">Hope your TASK is done 😀</h2>
+    <div class="display-timer">
+      <h1 class="display-title">Task Title</h1>
+      <h1 class="display-time">00:00:00:00</h1>
+      <h2 class="display-message"></h2>
     </div>
+
     <script src="./script.js" defer></script>
   </body>
 </html>

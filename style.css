@@ -6,303 +6,288 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-input {
-  color: #e9ecef;
-}
-input:hover {
-  border: 2px solid #fff;
-}
+
 body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: #212529;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-#main-title {
-  position: relative;
-  font-size: 10vmin;
-  color: #fff;
-  font-weight: 600;
 }
 
-.set-time {
-  visibility: visible; /* *********** visibility None ************ */
-  margin-top: 2vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 300px;
-  max-height: 350px;
-  overflow: hidden;
-  /* border: 2px solid greenyellow; */
-}
-
-.set-time-title {
-  margin-top: 20px;
-}
-
-.set-time-title input {
-  font-size: 18px;
-  width: 500px;
-  height: 45px;
+input {
+  background: #0c0c0c;
+  color: #e9ecef;
   outline: none;
   border: none;
   text-align: center;
-  border-radius: 5px;
-  background: #000;
 }
 
-.set-time-box {
-  margin-top: 2vh;
+.title {
+  position: relative;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-title {
+  height: auto;
+  margin: 20px 0;
+  font-size: 60px;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.sub-title {
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  font-size: 27px;
+  font-weight: 300;
+  color: #f72585;
+  text-shadow: 0 0 4px #f72585;
+}
+
+.input-form {
+  display: flex;
+  margin: 30px 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.input-title {
+  height: 40px;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  text-align: center;
+  font-size: 18px;
+  width: 450px;
+}
+
+.input-all {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.input-day,
+.input-hour,
+.input-min,
+.input-sec {
+  height: 34px;
+  border-radius: 4px;
+  width: 70px;
+  font-size: 16px;
+}
+
+.btns{
   display: flex;
   gap: 20px;
 }
 
-.set-time-box input {
-  text-align: center;
-  outline: none;
-  width: 100px;
-  height: 40px;
-  font-size: 16px;
-  outline: none;
-  /* border: 1.4px solid #fff; */
-  border: none;
-  border-radius: 3px;
+.btn{
   background: #000;
+  width: 90px;
+  height: 32px;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 18px;
+  cursor:pointer;
 }
 
-.btns {
-  margin-top: 6vh;
-  display: flex;
-  gap: 40px;
-  margin-bottom: 50px;
-}
-.btns button {
-  cursor: pointer;
-  width: 100px;
-  height: 35px;
-  outline: none;
-  border-radius: 4px;
-  color: #000000;
-  border: 2px solid black;
-  font-weight: 500;
-  font-size: 17px;
-}
-.btns :last-child {
-  background: #000;
-  color: #fff;
-  border: 2px solid #fff;
-}
-/* *********** Suggestion CSS************ */
-#quick {
-  visibility: visible; /* *********** visibility None ************ */
-  color: #e9ecef;
-  margin-top: -60px;
+.btns :last-child{
+  color: #000;
+  background: #fff;
 }
 
 .suggestiion {
-  visibility: visible; /* *********** visibility None ************ */
-  margin-top: 25px;
-  width: 550px;
-  height: 300px;
-  overflow: hidden;
   display: flex;
+  margin-top: 40px;
+  width: auto;
+  justify-content: center;
   flex-wrap: wrap;
-}
-.suggestiion .sug-box {
-  border-radius: 50%;
-  width: 120px;
-  height: 130px;
-  margin: auto;
-  place-content: center;
-  text-align: center;
-  background: #161a1c;
-  color: rgb(149, 149, 149);
+  gap: 20px;
 }
 
-/* *********** timer CSS************ */
-.display-time {
-  visibility: hidden; /* *********** Display None ************ */
-  position: absolute;
-  margin-top: -100px;
+.task-box {
+  cursor: pointer;
+  background: #0e0e10;
   display: flex;
-  align-items: center;
   flex-direction: column;
-  /* border: 2px solid white; */
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  height: 100px;
+  border-radius: 4px;
 }
-.display-time .display-task {
-  font-size: 35px;
-  font-weight: 400;
-  color: #e9ecef;
+.task-box p {
+  font-size: 20px;
+  color: #9e9e9e;
+}
+.task-box p span {
+  font-size: 16px;
 }
 
-.display-countdown {
+.display-timer {
+  display: none;
+  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.display-title {
+  color: #000000;
+}
+
+.display-time {
   font-family: monospace;
-  margin: 20px 0;
-  font-size: 50px;
-  display: flex;
-  color: #fcf9ff;
   font-weight: 400;
+  font-size: 50px;
+  color: #cbcbcb;
+  margin: 20px 0;
 }
 
-.display-time .message {
-  font-size: 30px;
-  font-weight: 500;
-  position: relative;
-  margin: 0 auto;
-  color: #e9ecef;
-  visibility: hidden;
-}
-
-/* ****************** Responsive design  ******************* */
-
-/* Extra Small Devices */
-@media (max-width: 470px) {
-  #main-title {
-    margin-top: 17px;
+@media (max-width: 300px) {
+  .main-title {
+    font-size: 25px;
     font-weight: 400;
-    font-size: 7vmin;
   }
 
-  .set-time-title input {
-    font-size: 14px;
-    width: 280px;
-    height: 35px;
+  .sub-title {
+    font-size: 13px;
+    text-shadow: none;
+    font-weight: 400;
   }
-  .set-time-box input {
-    width: 50px;
-    height: 30px;
+
+  .input-title {
+    height: 32px;
+    font-size: 12px;
+    width: 230px;
+  }
+
+  .input-all {
+    gap: 10px;
+  }
+
+  .input-day,
+  .input-hour,
+  .input-min,
+  .input-sec {
+    height: 25px;
+    width: 48px;
     font-size: 12px;
   }
 
-  .btns {
-    margin-top: 4vh;
-    display: flex;
-    gap: 20px;
-    margin-bottom: 10px;
-  }
-  .btns button {
-    cursor: pointer;
-    width: 80px;
-    height: 30px;
-    font-weight: 400;
-    font-size: 13px;
-    border: none;
-  }
-  .btns :last-child {
-    background: #000;
-    color: #fff;
-    border: 2px solid #fff;
+  .task-box {
+    width: 60%;
   }
 
-  #quick {
-    margin-top: -100px;
-    font-size: 25px;
-    font-weight: 400;
-  }
-
-  .suggestiion {
-    display: flex;
-    flex-wrap: wrap;
-    width: 240px;
-    height: inherit;
-  }
-  .suggestiion .sug-box {
-    font-size: 14px;
-    width: 100px;
-    height: 100px;
-    place-content: center;
-    text-align: center;
-    margin-bottom: 15px;
-  }
-  .display-time .message {
-    font-size: 24px;
-    font-weight: 300;
+  .display-time {
+    font-size: 28px;
   }
 }
 
-/* Small Devices */
-@media (min-width: 470px) and (max-width: 767px) {
-  #main-title {
-    margin-top: 20px;
+@media (min-width: 300px) and (max-width: 400px) {
+  .main-title {
+    font-size: 30px;
     font-weight: 400;
-    font-size: 6vmin;
   }
 
-  .set-time {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 300px;
-    max-height: 350px;
+  .sub-title {
+    font-size: 15px;
+    text-shadow: none;
+    font-weight: 400;
   }
 
-  .set-time-title {
-    margin-top: 20px;
+  .input-title {
+    height: 32px;
+    font-size: 14px;
+    width: 270px;
   }
 
-  .set-time-title input {
+  .input-day,
+  .input-hour,
+  .input-min,
+  .input-sec {
+    height: 30px;
+    width: 45px;
+    font-size: 14px;
+  }
+
+  .task-box {
+    width: 60%;
+  }
+
+  .display-time {
+    font-size: 35px;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 576px) {
+  .main-title {
+    font-size: 35px;
+    font-weight: 400;
+  }
+
+  .sub-title {
+    font-size: 18px;
+    text-shadow: none;
+    font-weight: 400;
+  }
+
+  .input-title {
+    height: 36px;
+    border-radius: 4px;
     font-size: 16px;
     width: 350px;
-    height: 40px;
-  }
-  .set-time-box input {
-    text-align: center;
-    outline: none;
-    width: 70px;
-    height: 35px;
-    font-size: 14px;
   }
 
-  #quick {
-    margin-top: -60px;
-    font-size: 25px;
-    font-weight: 400;
+  .input-day,
+  .input-hour,
+  .input-min,
+  .input-sec {
+    height: 30px;
+    border-radius: 4px;
+    width: 60px;
+    font-size: 15px;
   }
 
-  .suggestiion {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 390px;
-    min-height: 400px;
-    justify-content: space-around;
+  .input-all {
+    gap: 15px;
   }
-  .suggestiion .sug-box {
-    font-size: 14px;
-    width: 100px;
-    height: 100px;
-    place-content: center;
-    text-align: center;
+
+  .task-box {
+    width: 60%;
+  }
+
+  .display-time {
+    font-size: 40px;
   }
 }
 
-/* Medium Devices */
-@media (min-width: 768px) and (max-width: 991px) {
-  #main-title {
-    position: relative;
-    font-size: 8vmin;
-    font-weight: 500;
+@media (min-width: 577px) and (max-width: 767px) {
+  .main-title {
+    font-size: 50px;
+  }
+  .input-title {
+    width: 400px;
   }
 
-  #quick {
-    margin-top: -60px;
+  .task-box {
+    width: 40%;
   }
+}
 
-  .suggestiion {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 390px;
-    min-height: 400px;
-    justify-content: space-around;
-  }
-  .suggestiion .sug-box {
-    font-size: 14px;
-    width: 100px;
-    height: 100px;
-    place-content: center;
-    text-align: center;
-    margin-bottom: 20px;
+@media (min-width: 768px) and (max-width: 1110px) {
+  .main-title {
+    font-size: 50px;
   }
 }
